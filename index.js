@@ -9022,12 +9022,22 @@ const nonAutomaticIssues = issues.filter((element) =>{
 })
 
 //map array
-var rows = document.getElementById('results')
-rows.innerHTML = nonAutomaticIssues.map(element => `<tr>
-  <td>${element.body}</td>
-  <td${element.created_at}</td>
-  <td${element.state}</td>
-</tr>`
-).join('')
+// let rows = document.getElementById('results')
+// rows.innerHTML = nonAutomaticIssues.map(element => `<tr>
+//   <td>${element.body}</td>
+//   <td${element.created_at}</td>
+//   <td${element.state}</td>
+// </tr>`
+// ).join('')
 
 //table row -> 
+let table = document.getElementById('results')
+let len = nonAutomaticIssues.length
+for(i = 0; i < len; i++){
+  let row = table.inserRow(i)
+  row.insertCell(0).innerHTML = nonAutomaticIssues[i].body
+  row.insertCell(1).innerHTML = nonAutomaticIssues[i].created_at
+  row.insertCell(2).innerHTML = nonAutomaticIssues[i].state
+}
+
+
