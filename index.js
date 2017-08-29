@@ -9031,10 +9031,12 @@ const nonAutomaticIssues = issues.filter((element) =>{
 // ).join('')
 
 //table row -> 
+
 let table = document.getElementById('results')
 let len = nonAutomaticIssues.length
-for(i = 0; i < len; i++){
-  let row = table.inserRow(i)
+
+for (let i = 0; i < len; i++) {
+  let row = table.insertRow(i)
   row.insertCell(0).innerHTML = nonAutomaticIssues[i].body
   row.insertCell(1).innerHTML = nonAutomaticIssues[i].created_at
   row.insertCell(2).innerHTML = nonAutomaticIssues[i].state
